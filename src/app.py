@@ -1,18 +1,22 @@
 #!/usr/bin/python 
 import time
 import requests
+import json
+import os
 
 
 #send slack message 
 def slackmessage():
-	print("hi")
-	#slack_token = os.environ["SLACK_API_TOKEN"]
-				#client = slack.WebClient(token=slack_token)
-
-				#client.chat_postMessage(
-				 # channel="site",
-				 # text="404 error"
-				#)
+	slackUrl = "https://hooks.slack.com/services/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"
+	data = {
+		'token': os.environ['SLACK_TOKEN'],
+		'channel': 'uptimebot',
+		'text': 'hello'
+	}
+	headers = {
+		'Content-type': 'application/json'
+	}
+	requests.post(slackUrl, data=json.dumps(data), headers=headers)
 
 
 listOfWebsites = ['https://citethis.net/', 'https://12yearoldsimulator.com/', 'https://kristianwindsor.com/', 'https://passgen.site/', 'https://siliconvalleydrugs.com/']

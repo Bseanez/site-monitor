@@ -4,4 +4,6 @@ services:
     build: .
     volumes:
       - ./src/:/app/
+    env_file:
+      - environment.env
     restart: always
