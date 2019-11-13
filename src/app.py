@@ -7,7 +7,6 @@ import os
 
 #send slack message 
 def slackmessage():
-	slackUrl = "https://hooks.slack.com/services/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"
 	data = {
 		'token': os.environ['SLACK_TOKEN'],
 		'channel': 'uptimebot',
@@ -16,7 +15,8 @@ def slackmessage():
 	headers = {
 		'Content-type': 'application/json'
 	}
-	r = requests.post(slackUrl, data=json.dumps(data), headers=headers)
+	r = requests.post(os.environ['SLACK_URL'], data=json.dumps(data), headers=headers)
+	print(r)
 
 
 listOfWebsites = ['https://citethis.net/', 'https://12yearoldsimulator.com/', 'https://kristianwindsor.com/', 'https://passgen.site/', 'https://siliconvalleydrugs.com/']
