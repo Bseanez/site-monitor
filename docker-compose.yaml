@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  sitemonitor:
+    build: .
+    volumes:
+      - ./src/:/app/
+    restart: always
