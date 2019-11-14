@@ -32,4 +32,4 @@ while True:
 		except:
 			print('expired cert')
 			slackmessage(site)
-			
+		time.sleep(20)
